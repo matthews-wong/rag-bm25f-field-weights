@@ -13,8 +13,8 @@ Pure Python 3.12 standard library. No model downloads, nothing to install.
 ## Usage
 
 ```
-python3 -m bm25f "rollback a failed deploy" --corpus fixtures/docs.json
-python3 -m bm25f "rollback a failed deploy" --title-weight 1 --top 3
+python3 -m bm25f "tls certificate renewal" --corpus fixtures/docs.json
+python3 -m bm25f "tls certificate renewal" --title-weight 1 --top 3
 ```
 
 ## Scoring
@@ -29,6 +29,30 @@ score(d)  = sum over terms t of   idf(t) * tf'(t, d) / (k1 + tf'(t, d))
 
 `idf` uses document frequency over the whole document (any field), so a
 term is not counted twice just because it appears in title and body.
+
+## Fixture results
+
+`python3 -m bm25f.evaluate` runs every variant over the checked-in
+fixtures (`fixtures/docs.json`, `fixtures/queries.json`). These are
+fixture numbers on a tiny corpus, not a benchmark.
+
+```
+fixtures: 12 docs, 16 queries
+run                           recall@3     MRR
+plain BM25 (concatenated)        1.000   0.906
+BM25F title x1                   1.000   0.938
+BM25F title x2                   1.000   0.938
+BM25F title x3                   1.000   0.938
+BM25F title x5                   1.000   0.938
+```
+
+Title weighting lifts MRR a little (a title hit moves the intended
+document up) and costs nothing on recall@3 here. With only 16 queries one
+reordered result changes MRR by about 0.03, so treat the gap as a sanity
+check, not evidence. Queries whose answer lives only in a body are in the
+set on purpose; weights above 1 must not bury them.
+
+There is no stemming, so `rotate` does not match `rotating`.
 
 ## Validate
 
