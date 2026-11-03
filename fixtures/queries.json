@@ -1,0 +1,42 @@
+[
+  {
+    "query": "rollback failed deploy",
+    "relevant": "rollback-deploy"
+  },
+  {
+    "query": "tls certificate renewal",
+    "relevant": "cert-renewal"
+  },
+  {
+    "query": "database failover",
+    "relevant": "db-failover"
+  },
+  {
+    "query": "on-call handoff",
+    "relevant": "oncall-handoff"
+  },
+  {
+    "query": "rotate secrets",
+    "relevant": "secrets-rotation"
+  },
+  {
+    "query": "api rate limits",
+    "relevant": "rate-limits"
+  },
+  {
+    "query": "dns outage",
+    "relevant": "dns-outage"
+  },
+  {
+    "query": "scale workers",
+    "relevant": "scaling-workers"
+  },
+  {
+    "query": "flush cache",
+    "relevant": "cache-flush"
+  },
+  {
+    "query": "disk full build agents",
+    "relevant": "disk-full"
+  }
+]
