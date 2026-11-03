@@ -1,0 +1,62 @@
+[
+  {
+    "id": "rollback-deploy",
+    "title": "Rolling back a failed deploy",
+    "body": "Use the previous release tag and redeploy. Check the health endpoint after the rollout finishes."
+  },
+  {
+    "id": "deploy-checklist",
+    "title": "Deploy checklist",
+    "body": "Before a deploy confirm migrations, feature flags and the rollback plan. A failed deploy should be rolled back within minutes."
+  },
+  {
+    "id": "db-failover",
+    "title": "Database failover runbook",
+    "body": "Promote the replica when the primary stops answering. Update the connection string and verify replication lag."
+  },
+  {
+    "id": "cert-renewal",
+    "title": "Renewing TLS certificates",
+    "body": "Certificates expire every 90 days. Run the renewal job and reload the proxy to pick up the new certificate."
+  },
+  {
+    "id": "oncall-handoff",
+    "title": "On-call handoff",
+    "body": "Summarise open incidents, pending deploys and any failed jobs for the next engineer."
+  },
+  {
+    "id": "disk-full",
+    "title": "Disk full on build agents",
+    "body": "Prune old images and caches. A full disk makes deploys and builds fail with confusing errors."
+  },
+  {
+    "id": "rate-limits",
+    "title": "API rate limits",
+    "body": "Clients receive 429 when over quota. Retry with exponential backoff and jitter."
+  },
+  {
+    "id": "secrets-rotation",
+    "title": "Rotating secrets",
+    "body": "Rotate database passwords and API keys quarterly. Restart services after rotation so they load new values."
+  },
+  {
+    "id": "log-search",
+    "title": "Searching logs",
+    "body": "Filter by correlation id first. Deploy markers appear in the timeline to help correlate regressions."
+  },
+  {
+    "id": "dns-outage",
+    "title": "DNS outage playbook",
+    "body": "Check the resolver, then the zone. Fall back to the secondary provider if records fail to resolve."
+  },
+  {
+    "id": "cache-flush",
+    "title": "Flushing the cache",
+    "body": "Evicting keys causes a spike on the database. Flush one shard at a time and watch latency."
+  },
+  {
+    "id": "scaling-workers",
+    "title": "Scaling queue workers",
+    "body": "Add workers when queue depth stays high. Each worker holds a database connection so watch the pool size."
+  }
+]
