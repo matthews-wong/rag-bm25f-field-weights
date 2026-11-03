@@ -38,5 +38,29 @@
   {
     "query": "disk full build agents",
     "relevant": "disk-full"
+  },
+  {
+    "query": "deploy checklist",
+    "relevant": "deploy-checklist"
+  },
+  {
+    "query": "failed jobs",
+    "relevant": "oncall-handoff"
+  },
+  {
+    "query": "deploys",
+    "relevant": "disk-full"
+  },
+  {
+    "query": "database",
+    "relevant": "db-failover"
+  },
+  {
+    "query": "logs",
+    "relevant": "log-search"
+  },
+  {
+    "query": "workers",
+    "relevant": "scaling-workers"
   }
 ]
